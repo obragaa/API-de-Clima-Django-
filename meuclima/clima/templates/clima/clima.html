@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'clima/estilo.css' %}">
+
+{% block content %}
+  <h1>Previsão do tempo</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="cidade" placeholder="Cidade">
+    <button type="submit">Buscar</button>
+  </form>
+  {% if cidade %}
+    <h2>{{ cidade.nome }}</h2>
+    <p>{{ cidade.temperatura }}°F</p>
+    <p>{{ cidade.descricao }}</p>
+  {% endif %}
+{% endblock %}
