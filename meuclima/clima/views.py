@@ -1,10 +1,14 @@
+import os
+
 import requests
 from django.shortcuts import render
 from .models import Cidade
 
 
 def index(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=cc6c9cdb76a3d37c7075b66e77b09d13'
+    # a chave da API vem do ambiente, nunca do código
+    chave = os.environ.get('OPENWEATHER_API_KEY', '')
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=' + chave
 
     if request.method == 'POST':
         cidade = request.POST['cidade']

@@ -8,6 +8,7 @@ Este é um projeto simples de previsão do tempo usando Django e a API do OpenWe
 2. Crie um ambiente virtual e ative-o.
 3. Instale as dependências com `pip install -r requirements.txt`.
 4. Execute as migrações com `python manage.py migrate`.
+5. Crie uma chave gratuita em https://home.openweathermap.org/api_keys e defina a variável de ambiente `OPENWEATHER_API_KEY` com ela (no Windows: `set OPENWEATHER_API_KEY=sua_chave`; no Linux/macOS: `export OPENWEATHER_API_KEY=sua_chave`).
 
 ## Uso
 
